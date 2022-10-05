@@ -298,4 +298,39 @@
   .wrapper-content--box__text1 {
     font-size: 24px;
   }
+}
+.site-section__container {
+  margin-top: 115px;
+}
+
+.text-box {
+  display: flex;
+  gap: 15px;
+}
+
+.site-section__container__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 62px;
+  color: #191c2f;
+}
+
+.section-content--box {
+  width: 427px;
+  height: 282px;
+  background: rgba(35, 4, 157, 0.03);
+  border: 1px solid #feab38;
+  border-radius: 10px;
+  padding: 30px 28px 26px;
+}
+
+.section-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 40px;
 }/*# sourceMappingURL=main.css.map */
