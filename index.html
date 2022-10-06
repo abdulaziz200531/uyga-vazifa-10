@@ -1,152 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" href="data:image/jpeg;base64,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">
+    <title>mallbro segaret</title>
+  </head>
+  <body>
     <header class="site-header">
-        <div class="container site-header__container">
-            <nav class="navbar">
-                <a href="#">
-                    <img src="./img/logo-img.svg" alt="logo-img" width="164" height="35">
-                </a>
-            </nav>
-            <ul class="navbar__list">
-                <li class="navbar__item">
-                    <a class="navbar__link1" href="#">Kompaniya</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="#">Xizmatlar</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="#">Portfolio</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="#">Hamkorlar</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="#">Biz bilan aloqa</a>
-                </li>
-            </ul>
-            <li class="navbar__item1">
-                <a class="navbar__link1" href="#"><b class="link__b">+99895</b>  <b class="link__b1">888 35 37</b></a>
-            </li>
-            <div class="navbar-content">
-                <div class="navbar-content--img">  
-                    <img src="./img/btn-img.svg" alt="btn-img">
-                </div>
-                <div class="navbar-content--text">
-                    <p class="navbar-content--text__text">RU</p>
-                </div>
-            </div>
-            <img class="ganberger-img" src="./img/ganberger--img.svg" alt="banbeurger-img" width="26px" height="20">
+      <div class="container site-header__container">
+        <nav class="navbar">
+          <a href="#">
+            <img
+              src="./img/logo-img.svg"
+              alt="logo-img"
+              width="164"
+              height="35"
+            />
+          </a>
+        </nav>
+        <ul class="navbar__list">
+          <li class="navbar__item">
+            <a class="navbar__link1" href="#">Kompaniya</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="#">Xizmatlar</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="#">Portfolio</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="#">Hamkorlar</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="#">Biz bilan aloqa</a>
+          </li>
+        </ul>
+        <li class="navbar__item1">
+          <a class="navbar__link1" href="#"
+            ><b class="link__b">+99895</b> <b class="link__b1">888 35 37</b></a
+          >
+        </li>
+        <div class="navbar-content">
+          <div class="navbar-content--img">
+            <img src="./img/btn-img.svg" alt="btn-img" />
+          </div>
+          <div class="navbar-content--text">
+            <p class="navbar-content--text__text">RU</p>
+          </div>
         </div>
+        <img
+          class="ganberger-img"
+          src="./img/ganberger--img.svg"
+          alt="banbeurger-img"
+          width="26px"
+          height="20"
+        />
+      </div>
     </header>
     <main>
-        <section class="site-hero">
-            <div class="container site-hero__container">
-                <div class="hero-text">
-                    <h2 class="hero-text__title">Biznesingiz uchun 
-                        raqamli yechimlarni 
-                        taklif qilamiz</h2>
-                    <p class="hero-text__text">HAR QANDAY MURAKKABLIKDAGI</p>
-                    <div class="btn-box">
-                        <div class="btn-box--content">
-                            <div class="btn-box-content__text">
-                                <a class="btn-box--text__link" href="#">Portfolioni ko’rish</a>
-                            </div>
-                            <div class="btn-box--img">
-                                <img class="btn-box--img__img1" src="./img/btn-img.png" alt="btn-img">
-                            </div>
-                        </div>
-                        <div class="btn-box--content1">
-                            <div class="btn-box-content__text">
-                                <a class="btn-box--text__link" href="#">Qo’ng’iroq</a>
-                            </div>
-                            <div class="btn-box--img">
-                                <img src="./img/btn-img1.png" alt="btn-img">
-                            </div>
-                        </div>
-                    </div>
+      <section class="site-hero">
+        <div class="container site-hero__container">
+          <div class="hero-text">
+            <h2 class="hero-text__title">
+              Biznesingiz uchun raqamli yechimlarni taklif qilamiz
+            </h2>
+            <p class="hero-text__text">HAR QANDAY MURAKKABLIKDAGI</p>
+            <div class="btn-box">
+              <div class="btn-box--content">
+                <div class="btn-box-content__text">
+                  <a class="btn-box--text__link" href="#"
+                    >Portfolioni ko’rish</a
+                  >
                 </div>
-                    <div class="hero-img">
-                        <img class="hero-img__img" src="./img/hero-img.svg" alt="hero-img">
-                    </div>
+                <div class="btn-box--img">
+                  <img
+                    class="btn-box--img__img1"
+                    src="./img/btn-img.png"
+                    alt="btn-img"
+                  />
+                </div>
+              </div>
+              <div class="btn-box--content1">
+                <div class="btn-box-content__text">
+                  <a class="btn-box--text__link" href="#">Qo’ng’iroq</a>
+                </div>
+                <div class="btn-box--img">
+                  <img src="./img/btn-img1.png" alt="btn-img" />
+                </div>
+              </div>
             </div>
-        </section>
-        <section class="site-wrapper">
-            <div class="container site-wrapper__container">
-                <div class="wrapper-content--box">
-                    <h3 class="wrapper-content--box__title">10+</h3>
-                    <p class="wrapper-content--box__text1">Yakunlangan loyihalar</p>
-                </div>
+          </div>
+          <div class="hero-img">
+            <img
+              class="hero-img__img"
+              src="./img/hero-img.svg"
+              alt="hero-img"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="site-wrapper">
+        <div class="container site-wrapper__container">
+          <div class="wrapper-content--box">
+            <h3 class="wrapper-content--box__title">10+</h3>
+            <p class="wrapper-content--box__text1">Yakunlangan loyihalar</p>
+          </div>
 
-                <div class="wrapper-content--box">
-                    <h3 class="wrapper-content--box__title">12+</h3>
-                    <p class="wrapper-content--box__text1">Soha mutaxassislari</p>
-                </div>
+          <div class="wrapper-content--box">
+            <h3 class="wrapper-content--box__title">12+</h3>
+            <p class="wrapper-content--box__text1">Soha mutaxassislari</p>
+          </div>
 
-                <div class="wrapper-content--box">
-                    <h3 class="wrapper-content--box__title">15+</h3>
-                    <p class="wrapper-content--box__text2">hamkorlik</p>
-                </div>
+          <div class="wrapper-content--box">
+            <h3 class="wrapper-content--box__title">15+</h3>
+            <p class="wrapper-content--box__text2">hamkorlik</p>
+          </div>
 
-                <div class="wrapper-content--box">
-                    <h3 class="wrapper-content--box__title">6+</h3>
-                    <p class="wrapper-content--box__text">xizmat turlari</p>
-                </div>
+          <div class="wrapper-content--box">
+            <h3 class="wrapper-content--box__title">6+</h3>
+            <p class="wrapper-content--box__text">xizmat turlari</p>
+          </div>
+        </div>
+      </section>
+      <section class="site-section">
+        <div class="container site-section__container">
+          <div class="text-box">
+            <p class="text-box__text">BIZNING</p>
+            <img src="./img/text-img.svg" alt="text-img" />
+          </div>
+          <h2 class="site-section__container__title">Xizmatlarimiz</h2>
+          <div class="section-content">
+            <div class="section-content--box">
+              <img
+                class="section-content--box__img"
+                src="./img/section-img-1.svg"
+                alt="section-img"
+              />
+              <h4 class="section-content--box__title">Veb-saytlar</h4>
+              <p class="section-content--box__text">
+                Korporativ veb saytlardan tortib veb ilovalargacha boʻlgan
+                murakkablikdagi internet saytlarni sifat kafolati bilan ishlab
+                chiqaramiz
+              </p>
             </div>
-        </section>
-        <section class="site-section">
-            <div class="container site-section__container">
-                <div class="text-box">
-                    <p class="text-box__text">BIZNING</p>
-                    <img src="./img/text-img.svg" alt="text-img">
-                </div>
-                <h2 class="site-section__container__title">Xizmatlarimiz</h2>
-                <div class="section-content">
-                    <div class="section-content--box">
-                        <img src="./img/section-img-1.svg" alt="section-img">
-                        <h4 class="section-content--box__title">Veb-saytlar</h4>
-                        <p class="section-content--box__text">Korporativ veb saytlardan tortib veb ilovalargacha boʻlgan murakkablikdagi internet saytlarni sifat kafolati bilan ishlab chiqaramiz</p>
-                    </div>
-                    <div class="section-content--box">
-                        <img src="./img/section-img-2.svg" alt="section-img">
-                        <h4 class="section-content--box__title">Ui/Ux dizayn</h4>
-                        <p class="section-content--box__text">Loyiha MindMapʼini ishlab chiqish va ushbu arxitektura asosida optimal yechimga ega dizaynlarni chizish</p>
-                    </div>
-                    <div class="section-content--box">
-                        <img src="./img/section-img-3.svg" alt="section-img">
-                        <h4 class="section-content--box__title">CRM tizimlar</h4>
-                        <p class="section-content--box__text">Biznesni va jarayonlarni avtomatlashtirish, kanselyariya ishlarini 100% gacha kamaytiruvchi boshqaruv elektron tizimlarini ishlab chiqish          </p>
-                    </div>
-                    <div class="section-content--box">
-                        <img src="./img/section-img-4.svg" alt="section-img">
-                        <h4 class="section-content--box__title">Mobile ilovalar</h4>
-                        <p class="section-content--box__text">Istalgan qiyinchilikdagi mobil ilovalarni ishlab chiqish va ularni texnik qoʻllab-quvvatlash.</p>
-                    </div>
-                    <div class="section-content--box">
-                        <img src="./img/section-img-5.svg" alt="section-img">
-                        <h4 class="section-content--box__title">Logo branding</h4>
-                        <p class="section-content--box__text">Loyihangiz uchun yagona va oʻziga xos boʻlgan logotipni ishlab chiqish va uni brending qoidalarini ham yaratib berish</p>
-                    </div>
-                    <div class="section-content--box">
-                        <img src="./img/section-img-6.svg" alt="section-img">
-                        <h4 class="section-content--box__title">Marketing</h4>
-                        <p class="section-content--box__text">Biznesni rivojlantirish uni ommaga tanitish, mijozlar bilan aloqalarni yaxshilash va uni ko’paytirishga yordam beramiz        </p>
-                    </div>
-                    <div class="section-content--box">
-                        <img src="./img/section-img-7.svg" alt="section-img">
-                        <h4 class="section-content--box__title">Telegram bot</h4>
-                        <p class="section-content--box__text">Loyihangiz uchun foydali va mijozlaringizga qulay bo’lgan botlarni taqdim etamiz</p>
-                    </div>
-                </div>
+            <div class="section-content--box">
+              <img
+                class="section-content--box__img"
+                src="./img/section-img-2.svg"
+                alt="section-img"
+              />
+              <h4 class="section-content--box__title">Ui/Ux dizayn</h4>
+              <p class="section-content--box__text">
+                Loyiha MindMapʼini ishlab chiqish va ushbu arxitektura asosida
+                optimal yechimga ega dizaynlarni chizish
+              </p>
             </div>
-        </section>
+            <div class="section-content--box">
+              <img
+                class="section-content--box__img"
+                src="./img/section-img-3.svg"
+                alt="section-img"
+              />
+              <h4 class="section-content--box__title">CRM tizimlar</h4>
+              <p class="section-content--box__text">
+                Biznesni va jarayonlarni avtomatlashtirish, kanselyariya
+                ishlarini 100% gacha kamaytiruvchi boshqaruv elektron
+                tizimlarini ishlab chiqish
+              </p>
+            </div>
+            <div class="section-content--box">
+              <img
+                class="section-content--box__img"
+                src="./img/section-img-4.svg"
+                alt="section-img"
+              />
+              <h4 class="section-content--box__title">Mobile ilovalar</h4>
+              <p class="section-content--box__text">
+                Istalgan qiyinchilikdagi mobil ilovalarni ishlab chiqish va
+                ularni texnik qoʻllab-quvvatlash.
+              </p>
+            </div>
+            <div class="section-content--box">
+              <img
+                class="section-content--box__img"
+                src="./img/section-img-5.svg"
+                alt="section-img"
+              />
+              <h4 class="section-content--box__title">Logo branding</h4>
+              <p class="section-content--box__text">
+                Loyihangiz uchun yagona va oʻziga xos boʻlgan logotipni ishlab
+                chiqish va uni brending qoidalarini ham yaratib berish
+              </p>
+            </div>
+            <div class="section-content--box">
+              <img
+                class="section-content--box__img"
+                src="./img/section-img-6.svg"
+                alt="section-img"
+              />
+              <h4 class="section-content--box__title">Marketing</h4>
+              <p class="section-content--box__text">
+                Biznesni rivojlantirish uni ommaga tanitish, mijozlar bilan
+                aloqalarni yaxshilash va uni ko’paytirishga yordam beramiz
+              </p>
+            </div>
+            <div class="section-content--box">
+              <img
+                class="section-content--box__img"
+                src="./img/section-img-7.svg"
+                alt="section-img"
+              />
+              <h4 class="section-content--box__title">Telegram bot</h4>
+              <p class="section-content--box__text">
+                Loyihangiz uchun foydali va mijozlaringizga qulay bo’lgan
+                botlarni taqdim etamiz
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="site-col">
+        <div class="container site-col__container">
+          <div class="text-box">
+            <p class="text-box__text1">BIZNING</p>
+            <img
+              class="text-box__img"
+              src="./img/text-img1.svg"
+              alt="text-img"
+            />
+          </div>
+          <div class="title-box">
+            <h2 class="site-col__container__title">Portfolio</h2>
+            <ul class="col__list">
+              <li class="col__item">
+                <a class="col__link" href="#">MOBIL ILOVA</a>
+              </li>
+              <li class="col__item">
+                <a class="col__link" href="#">VEB-SAYTLAR</a>
+              </li>
+              <li class="col__item">
+                <a class="col__link1" href="#">BRENDING</a>
+              </li>
+              <li class="col__item">
+                <a class="col__link1" href="#">MARKETING</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-content">
+            <div class="box">
+              <div class="col-box1"></div>
+            </div>
+            <div class="box1">
+              <div class="col-box"></div>
+              <div class="col-box"></div>
+              <div class="col-box"></div>
+              <div class="col-box"></div>
+            </div>
+          </div>
+          <div class="col-btn">
+            <div class="col-btn--box">
+              <a class="col-btn--box__link" href="#">Barchasi</a>
+            </div>
+            <div class="btn-img--box">
+              <img src="./img/btn-img.png" alt="btn-img">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="site-intro">
+        <div class="container site-intro__container">
+          <div class="intro-text--box">
+            <p class="intro-text--box__text">Hamkorlar</p>
+            <img
+              class="intro-text--box__img"src="./img/text-img.svg"alt="text-img">
+          </div>
+          <h2 class="intro__title">Bizga ishonadigan kompaniyalar</h2>
+          <div class="intro-content">
+            <div class="intro-content--box">
+              <img src="./img/intro-img1.svg" alt="intro-img">
+            </div>
+
+            <div class="intro-content--box1">
+              <img src="./img/intro-img2.svg" alt="intro-img">
+            </div>
+
+            <div class="intro-content--box2">
+              <img class="intro-content--box2__img" src="./img/intro-img3.svg" alt="intro-img">
+            </div>
+
+            <div class="intro-content--box3">
+              <img class="intro-content--box3__img" src="./img/intro-img4.svg" alt="intro-img">
+            </div>
+
+            <div class="intro-content--box4">
+              <img class="intro-img" src="./img/intro-img5.svg" alt="intro-img">
+            </div>
+
+            <div class="intro-content--box5">
+              <img class="intro-content--box5__img" src="./img/intro-img6.svg" alt="intro-img">
+            </div>
+
+            <div class="intro-content--box6">
+              <img class="intro-content--box6__img" src="./img/intro-img7.svg" alt="intro-img">
+            </div>
+
+            <div class="intro-content--box7">
+              <img src="./img/intro-img8.svg" alt="intro-img">
+            </div>
+
+
+            <div class="intro-content--box8">
+              <img class="intro-content--box8__img" src="./img/intro-img9.svg" alt="intro-img">
+            </div>
+
+            <div class="intro-content--box9">
+              <img src="./img/intro-img-10.svg" alt="intro-img">
+            </div>
+
+            <div class="intro-content--box10">
+              <img class="intro-content--box10__img" src="./img/intro-img11.svg" alt="intro-img">
+            </div>
+
+            <div class="intro-content--box11">
+              <img class="intro-content--box11__img" src="./img/intro-img-11.svg" alt="intro-img">
+            </div>
+
+            <div class="intro-content--box12">
+              <img class="intro-content--box12__img" src="./img/intro-img-13.svg" alt="intro-img">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="site-wrap">
+        <div class="container site-wrap__container">
+          <h3 class="site-wrap__container__title">Bizning jamoa</h3>
+          <div class="wrap-content">
+            <div class="wrap-content--box">
+              <img class="wrap-content--box__img" src="./img/wrap-img-1.svg" alt="wrap">
+              <h5 class="wrap-content--box__title">Мироншох Насимов</h5>
+              <p class="wrap-content--box__text">IT-эксперт, Основатель компании Naf</p>
+            </div>
+
+            <div class="wrap-content--box">
+              <img class="wrap-content--box__img" src="./img/wrap-img-2.svg" alt="wrap">
+              <h5 class="wrap-content--box__title1">Ботир Каримов </h5>
+              <p class="wrap-content--box__text1">Разработчик, Front-end</p>
+            </div>
+
+            <div class="wrap-content--box">
+              <img class="wrap-content--box__img" src="./img/wrap-img-1.svg" alt="wrap">
+              <h5 class="wrap-content--box__title">Мироншох Насимов</h5>
+              <p class="wrap-content--box__text">IT-эксперт, Основатель компании Naf</p>
+            </div>
+
+            <div class="wrap-content--box">
+              <img class="wrap-content--box__img" src="./img/wrap-img-1.svg" alt="wrap">
+              <h5 class="wrap-content--box__title">Мироншох Насимов</h5>
+              <p class="wrap-content--box__text">IT-эксперт, Основатель компании Naf</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="site-velo">
+        <div class="container site-velo__container">
+            <p class="site-velo-container__text">Sizda g’oya bormi?</p>
+            <h4 class="site-velo__container__title">BIZGA BOG'LANING G'OYALARNI AMALGA OSHIRING!</h4>
+            <div class="velo-content">
+                <img class="velo-content__img" src="./img/velo-img.svg" alt="velo-img">
+            </div>
+        </div>
+      </section>
     </main>
-</body>
+    <footer class="site-footer">
+      <div class="container site-footer__container">
+        <div class="footer-content">
+          <div class="footer-content--box">
+            <img src="./img/footer-img-1.svg" alt="footer-img">
+            <img src="./img/footer-img-2.svg" alt="footer-img">
+            <img src="./img/footer-img-3.svg" alt="footer-img">
+            <img src="./img/footer-img-4.svg" alt="footer-img">
+            <a class="footer-content__link" href="#">+99899 181 42 33</a>
+            <a class="footer-content__link" href="#">+99899 739 35 38</a>
+          </div>
+          <ul class="footer__list">
+            <li>
+              <a href="#">
+                <img src="./img/footer-img-5.svg" alt="footer-img">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <img class="hr-img-1" src="./img/link-img-hr.svg" alt="">
+        <img class="hr-img" src="./img/footer-hr-img.svg" alt="">
+        <img src="./img/hr-img.svg" alt="">
+        <div class="content-box">
+          <div class="content-box--box">
+            <h6 class="content-box--box__title">Favour group 2022</h6>
+          </div>
+          <div class="content-box--box1">
+            <div class="link-box">
+              <a class="link-box__link" href="#">Toshkent, Chilonzor, Shirin chorrahasi</a>
+            </div>
+            <div class="link-box">
+              <a class="link-box__link1" href="#">xaritada</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
